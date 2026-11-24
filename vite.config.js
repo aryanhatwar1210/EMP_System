@@ -6,6 +6,6 @@ export default defineConfig({
     host: "localhost",
     port: 5173,
     strictPort: false,
-    proxy: { "/api": { target: "http://localhost:5000", changeOrigin: true } },
+    proxy: { "/api": { target: "https://emp-system-backend-ndxg.onrender.com", changeOrigin: true } },
   },
 });

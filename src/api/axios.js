@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Use the Express API directly by default. Set VITE_API_URL only when deploying elsewhere.
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://emp-system-backend-ndxg.onrender.com",
   timeout: 20000,
 });
 
@@ -27,7 +27,7 @@ api.interceptors.response.use(
 
 export const errorMessage = (err, fallback = "Something went wrong. Try again.") => {
   if (err?.response?.data?.message) return err.response.data.message;
-  if (err?.code === "ERR_NETWORK") return "Cannot reach the backend API at http://localhost:5000. Start the backend and check its port.";
+  if (err?.code === "ERR_NETWORK") return "Cannot reach the backend API at https://emp-system-backend-ndxg.onrender.com. Start the backend and check its port.";
   return fallback;
 };
 export default api;
